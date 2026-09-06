@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baton — move your Magic Keyboard between Macs in one click</title>
+<meta name="description" content="Baton is a macOS menu bar app that hands your Magic Keyboard, Mouse and Trackpad between Macs in a single click. No cable, no re-pairing, no System Settings. One payment, yours forever.">
+<link rel="icon" href="assets/icon-256.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/icon-256.png">
+<link rel="stylesheet" href="assets/site.css">
+<meta property="og:title" content="Baton — move your Magic Keyboard between Macs in one click">
+<meta property="og:description" content="Hand your Magic Keyboard, Mouse and Trackpad between Macs from the menu bar. No cable, no re-pairing.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/icon.png">
+<meta name="theme-color" content="#0C0C11">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/baton-site/">
+      <img src="assets/icon-256.png" alt="">
+      Baton
+    </a>
+    <nav class="nav">
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a class="btn btn-primary btn-sm" href="#pricing">Buy</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">macOS menu bar app</p>
+      <h1>One keyboard.<br><span class="accent">Every Mac.</span></h1>
+      <p class="lede">
+        Baton hands your Magic Keyboard, Mouse and Trackpad from one Mac to
+        another in a single click. No cable. No re-pairing. No digging through
+        System Settings.
+      </p>
+      <div class="cta-row">
+        <!-- PRICE appears here and in the pricing card. Change both. -->
+        <a class="btn btn-primary" href="#pricing">Buy Baton — $15 once</a>
+        <a class="btn btn-ghost" href="https://github.com/enalmar/baton-site/releases/latest">
+          Download the free trial
+        </a>
+      </div>
+      <div class="meta-row">
+        <span>macOS 14 or later</span>
+        <span>·</span>
+        <span>Apple silicon &amp; Intel</span>
+        <span>·</span>
+        <span>14 days free, no card</span>
+      </div>
+    </div>
+
+    <!-- Live demonstration of the handoff, not decoration. -->
+    <div class="demo">
+      <p class="eyebrow demo-label">The handoff</p>
+      <div class="demo-stage">
+        <div class="mac is-active" id="macA">
+          <div class="mac-screen">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8E8EA3" stroke-width="1.4">
+              <rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/>
+            </svg>
+          </div>
+          <div>
+            <div class="mac-name">Studio</div>
+            <div class="mac-state">Has the keyboard</div>
+          </div>
+        </div>
+        <div class="mac" id="macB">
+          <div class="mac-screen">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8E8EA3" stroke-width="1.4">
+              <rect x="3" y="5" width="18" height="11" rx="2"/><path d="M2 19h20"/>
+            </svg>
+          </div>
+          <div>
+            <div class="mac-name">MacBook Pro</div>
+            <div class="mac-state">Ready</div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-track">
+        <div class="chip" id="chip">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="2" y="6" width="20" height="12" rx="2"/><path d="M7 15h10"/>
+          </svg>
+          Magic Keyboard
+        </div>
+      </div>
+      <div class="demo-caption">
+        <p class="small" id="demoCaption">One click moves it. The old Mac lets go, the new one connects.</p>
+        <button class="demo-btn" id="demoBtn" type="button">Hand it over</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ WHY ============ -->
+<section>
+  <div class="wrap">
+    <h2>Two Macs. One good keyboard.</h2>
+    <p class="body" style="margin-top:var(--s4)">
+      Apple's Magic peripherals will pair with several Macs, but they only hold
+      one connection at a time. Moving one normally means opening Bluetooth
+      settings on two machines and waiting. Baton turns that into a click in the
+      menu bar.
+    </p>
+    <div class="grid grid-3" style="margin-top:var(--s7)">
+      <div class="card">
+        <div class="ico">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </div>
+        <h3>Release, then take</h3>
+        <p>The Mac you leave drops the Bluetooth bond so it stops grabbing the device back. The Mac you move to pairs and connects on its own.</p>
+      </div>
+      <div class="card">
+        <div class="ico">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18"/><path d="M5 8h14"/><circle cx="12" cy="16" r="3"/></svg>
+        </div>
+        <h3>Nothing gets stranded</h3>
+        <p>Baton checks the other Mac is listening before it lets go. If the handover fails, your peripheral comes straight back.</p>
+      </div>
+      <div class="card">
+        <div class="ico">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        </div>
+        <h3>Stays on your network</h3>
+        <p>Your Macs talk to each other directly over your own network, encrypted with a code only you know. Nothing routes through us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ HOW ============ -->
+<section id="how">
+  <div class="wrap">
+    <p class="eyebrow">Setup takes about two minutes</p>
+    <h2 style="margin-top:var(--s3)">How it works</h2>
+    <div class="steps" style="margin-top:var(--s7)">
+      <div class="step">
+        <h3>Pair once, the normal way</h3>
+        <p>In System Settings → Bluetooth, pair each peripheral with each Mac a single time. Baton flips ownership afterwards; it doesn't replace that first pairing.</p>
+      </div>
+      <div class="step">
+        <h3>Enter the same code</h3>
+        <p>Baton generates a twelve-character code. Type it into each of your Macs so they recognise one another. That code is also the encryption key.</p>
+      </div>
+      <div class="step">
+        <h3>Click to hand over</h3>
+        <p>Open the menu bar and pick a Mac to send everything there, or open one peripheral's submenu to move just that one.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:var(--s8); align-items:center">
+      <div>
+        <h3 style="font-size:1.3rem">The whole interface</h3>
+        <p class="body" style="margin-top:var(--s3); font-size:.98rem">
+          Baton has no Dock icon and no window in your way. A checkmark shows
+          what is on this Mac right now. Click a Mac to send everything, or use a
+          peripheral's submenu to move one thing.
+        </p>
+      </div>
+      <div class="menu-mock" role="img" aria-label="Baton's menu bar dropdown showing two Macs and two peripherals, with the Magic Keyboard currently on this Mac">
+        <div class="row head">1 of 2 peripherals on this Mac</div>
+        <div class="sep"></div>
+        <div class="row head">Macs</div>
+        <div class="row"><span class="tick">✓</span> This Mac (Studio)</div>
+        <div class="row sel"><span class="tick"></span> MacBook Pro <span class="grow">move all →</span></div>
+        <div class="row"><span class="tick"></span> Office Mini <span class="grow">unreachable</span></div>
+        <div class="sep"></div>
+        <div class="row head">Peripherals</div>
+        <div class="row"><span class="tick">✓</span> Magic Keyboard <span class="grow">›</span></div>
+        <div class="row"><span class="tick"></span> Magic Trackpad <span class="grow">›</span></div>
+        <div class="sep"></div>
+        <div class="row"><span class="tick"></span> Settings… <span class="grow">⌘,</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ FEATURES ============ -->
+<section id="features">
+  <div class="wrap">
+    <h2>What you get</h2>
+    <div class="grid grid-3" style="margin-top:var(--s7)">
+      <div class="card">
+        <h3>Move everything at once</h3>
+        <p>One click sends your whole desk — keyboard, mouse and trackpad — to another Mac.</p>
+      </div>
+      <div class="card">
+        <h3>Or just one thing</h3>
+        <p>Send the trackpad to the laptop and keep typing on the desktop. Each peripheral moves on its own.</p>
+      </div>
+      <div class="card">
+        <h3>Hands over at sleep</h3>
+        <p>When a Mac sleeps it can let go of its peripherals so another Mac can pick them up, then take them back when it wakes.</p>
+      </div>
+      <div class="card">
+        <h3>As many Macs as you own</h3>
+        <p>Two, three, five. Every Mac that knows the code shows up in the menu automatically.</p>
+      </div>
+      <div class="card">
+        <h3>No account, no cloud</h3>
+        <p>There is nothing to sign into. Your Macs find each other on your own network and talk directly.</p>
+      </div>
+      <div class="card">
+        <h3>Signed and notarised</h3>
+        <p>Notarised by Apple, sandboxed, and asks for nothing beyond Bluetooth and your local network.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ PRICING ============ -->
+<section id="pricing">
+  <div class="wrap">
+    <p class="eyebrow">Pricing</p>
+    <h2 style="margin-top:var(--s3)">Pay once. That's it.</h2>
+    <p class="body" style="margin-top:var(--s4)">
+      No subscription, no upgrade pricing, no account. Try it for fourteen days
+      first; you only need a card if you decide to keep it.
+    </p>
+
+    <div class="grid grid-2" style="margin-top:var(--s7); align-items:start; gap:var(--s8)">
+    <div class="price-card">
+      <p class="eyebrow">Baton — personal licence</p>
+      <div class="price-tag">
+        <!-- PRICE also appears in the hero button. Change both. -->
+        <span class="amount">$15</span>
+        <span class="per">once, yours forever</span>
+      </div>
+      <p class="small">Includes VAT and sales tax where it applies.</p>
+      <ul class="ticks">
+        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m4 12 6 6L20 6"/></svg> Every Mac you personally own</li>
+        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m4 12 6 6L20 6"/></svg> All future updates</li>
+        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m4 12 6 6L20 6"/></svg> A licence key by email, no account to make</li>
+        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m4 12 6 6L20 6"/></svg> Refund within 30 days if it doesn't suit you</li>
+      </ul>
+      <a class="btn btn-primary" id="buyBtn" href="#" style="width:100%">Buy Baton</a>
+      <p class="small" id="buyNote" hidden style="margin-top:var(--s3); color:var(--amber)"></p>
+      <p class="small" style="margin-top:var(--s4)">
+        Or <a href="https://github.com/enalmar/baton-site/releases/latest" style="color:var(--soft)">download the trial</a> and decide later.
+      </p>
+    </div>
+
+    <div>
+      <h3 style="font-size:1.05rem">Why one payment</h3>
+      <p class="body" style="margin-top:var(--s2); font-size:.95rem">
+        Baton does one job and it is finished. Charging every month for a tool
+        that quietly moves a keyboard would be charging for nothing. You buy it,
+        it works, updates are included.
+      </p>
+
+      <h3 style="font-size:1.05rem; margin-top:var(--s6)">What "personal licence" means</h3>
+      <p class="body" style="margin-top:var(--s2); font-size:.95rem">
+        Every Mac you own, at home and at work. If you replace a machine, free
+        up its slot from your purchases page and activate the new one. Buying a
+        second licence is only for a second person.
+      </p>
+
+      <h3 style="font-size:1.05rem; margin-top:var(--s6)">Tax and refunds</h3>
+      <p class="body" style="margin-top:var(--s2); font-size:.95rem">
+        Polar handles the payment as merchant of record, so VAT and sales tax
+        are already in the price and your card details never touch this site.
+        Changed your mind within thirty days? <a href="support/" style="color:var(--indigo)">Ask for a refund</a>.
+      </p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="wrap">
+    <h2>Questions</h2>
+    <div class="faq" style="margin-top:var(--s6)">
+      <details>
+        <summary>Which peripherals does it work with?
+          <svg class="plus" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p class="answer">Apple's Magic Keyboard, Magic Mouse and Magic Trackpad from 2015 onwards. Other Bluetooth keyboards and mice often work too, but they are not supported and some refuse to re-pair quickly enough.</p>
+      </details>
+      <details>
+        <summary>Do I need an internet connection?
+          <svg class="plus" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p class="answer">Only to buy it and to activate your key once. After that Baton works entirely on your own network. It rechecks your licence about once a day and keeps working for a month without reaching the internet at all.</p>
+      </details>
+      <details>
+        <summary>How many Macs can I use it on?
+          <svg class="plus" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p class="answer">Every Mac you personally own. If you replace a machine you can free up its slot from your purchases page and activate the new one.</p>
+      </details>
+      <details>
+        <summary>What happens when the trial ends?
+          <svg class="plus" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p class="answer">Switching pauses and nothing else changes. Baton never releases a peripheral on its way out, so whatever you were using stays connected to the Mac that has it. Enter a key and switching resumes immediately.</p>
+      </details>
+      <details>
+        <summary>I lost my licence key.
+          <svg class="plus" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p class="answer">It is in the receipt email you were sent when you bought it. If you cannot find that, <a href="support/">get in touch</a> with the email address you paid with and it will be resent.</p>
+      </details>
+      <details>
+        <summary>Is my typing sent anywhere?
+          <svg class="plus" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p class="answer">No. Baton connects and disconnects Bluetooth devices; it never reads what you type or where you point. Your Macs exchange only device names and Bluetooth addresses, encrypted with your pairing code. See the <a href="privacy/">privacy note</a>.</p>
+      </details>
+      <details>
+        <summary>Why isn't this on the Mac App Store?
+          <svg class="plus" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p class="answer">Handing a Bluetooth device between machines needs to unpair it, which App Store sandbox rules do not allow. Baton is notarised by Apple and distributed directly instead.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="closer">
+      <div>
+        <h2>Put it on both Macs tonight.</h2>
+        <p class="small" style="margin-top:var(--s2)">Fourteen days free. No card, no account.</p>
+      </div>
+      <div class="closer-cta">
+        <a class="btn btn-ghost" href="https://github.com/enalmar/baton-site/releases/latest">Download the trial</a>
+        <a class="btn btn-primary" href="#pricing">Buy — $15 once</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <a class="brand" href="/baton-site/"><img src="assets/icon-256.png" alt="">Baton</a>
+    <div class="foot-links">
+      <a href="#pricing">Pricing</a>
+      <a href="license/">Licence help</a>
+      <a href="privacy/">Privacy</a>
+      <a href="support/">Support</a>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:var(--s5)">
+    <p class="small">Baton is made in Spain. Not affiliated with Apple. Magic Keyboard, Magic Mouse, Magic Trackpad and Mac are trademarks of Apple Inc.</p>
+  </div>
+</footer>
+
+<script>
+// The one place the checkout link lives. Paste the Polar checkout URL for the
+// Baton product here; until then the buy buttons say so instead of 404ing.
+var CHECKOUT_URL = "REPLACE_WITH_POLAR_CHECKOUT_URL";
+
+(function () {
+  var live = CHECKOUT_URL.indexOf("REPLACE") === -1;
+  var note = document.getElementById("buyNote");
+  var buttons = [document.getElementById("buyBtn")].concat(
+    Array.prototype.slice.call(document.querySelectorAll('a[href="#pricing"].btn-primary'))
+  );
+  var buy = document.getElementById("buyBtn");
+  if (!buy) return;
+  if (live) {
+    buy.href = CHECKOUT_URL;
+    buy.setAttribute("rel", "noopener");
+  } else {
+    buy.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (!note) return;
+      note.hidden = false;
+      note.textContent = "Checkout isn\u2019t open yet \u2014 the trial download works now, and buying goes live shortly.";
+    });
+  }
+})();
+
+// The hero demo. It advances on its own so the page explains itself at a
+// glance, and stops for good the moment a visitor takes over.
+(function () {
+  var chip = document.getElementById('chip');
+  var macA = document.getElementById('macA');
+  var macB = document.getElementById('macB');
+  var btn = document.getElementById('demoBtn');
+  var caption = document.getElementById('demoCaption');
+  if (!chip || !btn) return;
+
+  var right = false;
+  var timer = null;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function render() {
+    chip.classList.toggle('is-right', right);
+    macA.classList.toggle('is-active', !right);
+    macB.classList.toggle('is-active', right);
+    macA.querySelector('.mac-state').textContent = right ? 'Ready' : 'Has the keyboard';
+    macB.querySelector('.mac-state').textContent = right ? 'Has the keyboard' : 'Ready';
+    btn.textContent = right ? 'Bring it back' : 'Hand it over';
+    caption.textContent = right
+      ? 'The MacBook took it over. Your Studio let go automatically.'
+      : 'One click moves it. The old Mac lets go, the new one connects.';
+  }
+
+  function toggle() { right = !right; render(); }
+
+  function stopAuto() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+
+  btn.addEventListener('click', function () { stopAuto(); toggle(); });
+
+  if (!reduced) {
+    timer = setInterval(toggle, 3600);
+  }
+  render();
+})();
+</script>
+</body>
+</html>

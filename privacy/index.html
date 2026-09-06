@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — Baton</title>
+<meta name="description" content="What Baton stores and what it sends. Short version: your Macs talk to each other and nothing else.">
+<link rel="icon" href="../assets/icon-256.png" type="image/png">
+<link rel="stylesheet" href="../assets/site.css">
+<meta name="theme-color" content="#0C0C11">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../assets/icon-256.png" alt="">Baton</a>
+    <nav class="nav"><a href="../#pricing">Pricing</a><a class="btn btn-ghost btn-sm" href="../">Home</a></nav>
+  </div>
+</header>
+<main><section><div class="wrap prose">
+<h1 style="font-size:2.4rem">Privacy</h1>
+<p class="lede" style="margin-top:var(--s5)">Baton has no account, no analytics and no server of ours. Here is everything it touches.</p>
+
+<h2>What stays on your Mac</h2>
+<ul>
+  <li>The list of peripherals you chose to manage, as a small file in Baton's own Application Support folder.</li>
+  <li>Your pairing code, turned into an encryption key, stored in your login keychain.</li>
+  <li>Your licence key and the date it was last checked, also in the keychain.</li>
+</ul>
+
+<h2>What your Macs send each other</h2>
+<p>Only what a handover needs: the name and Bluetooth address of a peripheral, and whether a Mac currently holds it. This travels directly between your Macs over your own network, encrypted with a key derived from your pairing code. A Mac with a different code cannot complete the connection at all.</p>
+<p>Baton connects and disconnects Bluetooth devices. It never reads keystrokes, pointer movement or any other input.</p>
+
+<h2>What leaves your network</h2>
+<p>One thing: your licence key, sent to the store to activate it and then to recheck it roughly once a day. That request contains the key and a label you can recognise, which is your Mac's name. It does not contain your files, your typing or your address book.</p>
+<p>If you never buy a licence, and during the trial, Baton makes no outside connections at all.</p>
+
+<h2>Payments</h2>
+<p>Purchases are handled by Polar, which acts as the merchant of record and sends you the licence key. Baton never sees your card details. Polar's own privacy policy covers what they collect to process the payment and the tax on it.</p>
+
+<h2>Getting rid of it</h2>
+<p>Delete the app. To remove the stored key and licence as well, open Keychain Access and delete the items named <code>com.eam.baton.psk</code>, and drag the <code>Baton</code> folder out of <code>~/Library/Application Support</code>.</p>
+
+<h2>Contact</h2>
+<p>Questions about any of this go to <a href="../support/">support</a>.</p>
+</div></section></main>
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <a class="brand" href="../"><img src="../assets/icon-256.png" alt="">Baton</a>
+    <div class="foot-links">
+      <a href="../license/">Licence help</a><a href="../privacy/">Privacy</a><a href="../support/">Support</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
