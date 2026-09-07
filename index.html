@@ -33,92 +33,111 @@
 
 <main>
 
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">macOS menu bar app</p>
-      <h1>One keyboard.<br><span class="accent">Every Mac.</span></h1>
-      <p class="lede">
-        Baton moves your Magic Keyboard, Mouse and Trackpad from one Mac to
-        another. Click the Mac you want. That's it.
-      </p>
-      <div class="cta-row">
-        <!-- PRICE appears here and in the pricing card. Change both. -->
-        <a class="btn btn-primary" href="#pricing">Buy Baton — $9 once</a>
-        <a class="btn btn-ghost" href="https://github.com/enalmar/baton-site/releases/latest/download/Baton.dmg">Try it free for 14 days</a>
-      </div>
-      <div class="meta-row">
-        <span>macOS 14 or later</span>
-        <span>·</span>
-        <span>Apple silicon &amp; Intel</span>
-        <span>·</span>
-        <span>No card for the trial</span>
-      </div>
-    </div>
-
-    <div class="demo">
-      <p class="eyebrow demo-label">The handoff</p>
-      <div class="demo-stage">
-        <div class="mac is-active" id="macA">
-          <div class="mac-screen">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8E8EA3" stroke-width="1.4">
-              <rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/>
-            </svg>
-          </div>
-          <div>
-            <div class="mac-name">Studio</div>
-            <div class="mac-state">Has the keyboard</div>
-          </div>
-        </div>
-        <div class="mac" id="macB">
-          <div class="mac-screen">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8E8EA3" stroke-width="1.4">
-              <rect x="3" y="5" width="18" height="11" rx="2"/><path d="M2 19h20"/>
-            </svg>
-          </div>
-          <div>
-            <div class="mac-name">MacBook Pro</div>
-            <div class="mac-state">Ready</div>
-          </div>
-        </div>
-      </div>
-      <div class="demo-track">
-        <div class="chip" id="chip">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <rect x="2" y="6" width="20" height="12" rx="2"/><path d="M7 15h10"/>
-          </svg>
-          Magic Keyboard
-        </div>
-      </div>
-      <div class="demo-caption">
-        <p class="small" id="demoCaption">Click a Mac. The keyboard goes there.</p>
-        <button class="demo-btn" id="demoBtn" type="button">Hand it over</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="rule">
-
-<section>
+<section class="hero hero-centered">
   <div class="wrap">
-    <h2>You've got two Macs and one good keyboard.</h2>
-    <p class="body" style="margin-top:var(--s4)">
-      A Magic Keyboard will happily pair with both, but it only talks to one
-      at a time. So every switch means Bluetooth settings on this Mac, then
-      Bluetooth settings on that Mac, then waiting.
+    <p class="eyebrow">macOS menu bar app</p>
+    <h1>One keyboard.<br><span class="accent">Every Mac.</span></h1>
+    <p class="lede">
+      Baton moves your Magic Keyboard, Mouse and Trackpad from one Mac to
+      another. Two buttons. No cable, no re-pairing.
     </p>
-    <p class="body" style="margin-top:var(--s3)">
-      Baton does that bit for you. The Mac you're leaving lets go, the Mac
-      you're going to picks it up. If anything goes wrong, the keyboard comes
-      back to where it was.
-    </p>
+    <div class="cta-row">
+      <!-- PRICE appears here and in the pricing card. Change both. -->
+      <a class="btn btn-primary" href="#pricing">Buy Baton — $9 once</a>
+      <a class="btn btn-ghost" href="https://github.com/enalmar/baton-site/releases/latest/download/Baton.dmg">Try it free for 14 days</a>
+    </div>
+    <div class="meta-row">
+      <span>macOS 14 or later</span><span>·</span>
+      <span>Apple silicon &amp; Intel</span><span>·</span>
+      <span>No card for the trial</span>
+    </div>
   </div>
 </section>
 
 <hr class="rule">
 
 <section id="how">
+  <div class="wrap">
+    <p class="eyebrow">Try it</p>
+    <h2>How does it work?</h2>
+    <p class="body" style="margin-top:var(--s4)">
+      This is Baton's menu, as it appears in your menu bar. Press a button.
+    </p>
+
+    <div class="demo2" id="demo">
+      <!-- The panel, matching the real one control for control. -->
+      <div class="panel" role="group" aria-label="Baton menu bar panel">
+        <div class="p-head">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M7 15h10"/></svg>
+          <div>
+            <div class="p-title">Baton</div>
+            <div class="p-sub" id="pHead">1 of 1 on this Mac</div>
+          </div>
+        </div>
+        <div class="p-sep"></div>
+        <div class="p-big">
+          <button class="p-btn" id="btnBring" type="button" disabled>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            <span class="p-btn-t">Bring here</span>
+            <span class="p-btn-s" id="bringSub">already here</span>
+          </button>
+          <button class="p-btn" id="btnSend" type="button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            <span class="p-btn-t">Send away</span>
+            <span class="p-btn-s" id="sendSub">MacBook Pro</span>
+          </button>
+        </div>
+        <div class="p-sep"></div>
+        <div class="p-label">Peripherals</div>
+        <div class="p-row">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M7 15h10"/></svg>
+          <span>Magic Keyboard</span>
+          <span class="p-state" id="pState">here</span>
+          <span class="p-chev">›</span>
+        </div>
+        <div class="p-sep"></div>
+        <div class="p-label">Macs</div>
+        <div class="p-row"><span>This Mac (Studio)</span><span class="p-state" id="macA">all here</span></div>
+        <div class="p-row"><span>MacBook Pro</span><span class="p-state" id="macB"></span></div>
+        <div class="p-sep"></div>
+        <div class="p-foot"><span>Settings…</span><span>Quit</span></div>
+      </div>
+
+      <!-- The desk: two Macs and the keyboard that moves between them. -->
+      <div class="desk" id="desk" aria-live="polite">
+        <div class="mac2" id="deskA">
+          <svg viewBox="0 0 120 84" width="120" height="84" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="8" y="6" width="104" height="60" rx="6"/><path d="M40 78h40"/><path d="M60 66v12"/>
+          </svg>
+          <div class="mac2-name">Studio</div>
+        </div>
+        <div class="lane">
+          <div class="lane-line"></div>
+          <div class="kbd" id="kbd">
+            <svg viewBox="0 0 96 40" width="96" height="40" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="92" height="36" rx="6"/>
+              <path d="M12 12h6M24 12h6M36 12h6M48 12h6M60 12h6M72 12h6M12 21h6M24 21h6M36 21h6M48 21h6M60 21h6M72 21h6M22 30h52"/>
+            </svg>
+          </div>
+        </div>
+        <div class="mac2" id="deskB">
+          <svg viewBox="0 0 120 84" width="120" height="84" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="16" y="10" width="88" height="54" rx="5"/><path d="M6 72h108"/>
+          </svg>
+          <div class="mac2-name">MacBook Pro</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="small" style="margin-top:var(--s5); max-width:var(--measure)">
+      The Mac you're leaving lets go, the other one connects. If anything goes wrong, the keyboard comes back to where it was. Each device also has its own menu, for moving just the trackpad.
+    </p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="setup">
   <div class="wrap">
     <h2>Setting up</h2>
     <p class="body" style="margin-top:var(--s4)">Two minutes, once.</p>
@@ -140,38 +159,13 @@
 
     <div class="shots">
       <figure>
-        <img src="assets/settings-macs.png" alt="Baton's Macs settings, showing this Mac paired with a fingerprint and listening for others" loading="lazy">
-        <figcaption>Every Mac with the same code shows up here.</figcaption>
+        <img src="assets/settings-macs.png" alt="Baton's Macs settings, showing this Mac paired, its code hidden behind a Show button, and the other Macs it can see" loading="lazy">
+        <figcaption>Your code lives here. Every Mac you enter it on shows up.</figcaption>
       </figure>
       <figure>
         <img src="assets/settings-licence.png" alt="Baton's Licence settings, showing the trial with 14 days left and a field to paste a key" loading="lazy">
-        <figcaption>Fourteen days free, then paste your key.</figcaption>
+        <figcaption>Fourteen days free, then paste your key. Other Macs pick it up on their own.</figcaption>
       </figure>
-    </div>
-
-    <div class="grid grid-2" style="margin-top:var(--s8); align-items:center">
-      <div>
-        <h3 style="font-size:1.3rem">Then it's just this</h3>
-        <p class="body" style="margin-top:var(--s3); font-size:.98rem">
-          The menu lives in your menu bar. Click a Mac to send everything
-          there, or open a device and send just that one. The tick shows
-          what's on this Mac right now.
-        </p>
-      </div>
-      <div class="menu-mock" role="img" aria-label="Baton's menu bar dropdown showing two Macs and two peripherals, with the Magic Keyboard currently on this Mac">
-        <div class="row head">1 of 2 peripherals on this Mac</div>
-        <div class="sep"></div>
-        <div class="row head">Macs</div>
-        <div class="row"><span class="tick">✓</span> This Mac (Studio)</div>
-        <div class="row sel"><span class="tick"></span> MacBook Pro <span class="grow">move all →</span></div>
-        <div class="row"><span class="tick"></span> Office Mini <span class="grow">unreachable</span></div>
-        <div class="sep"></div>
-        <div class="row head">Peripherals</div>
-        <div class="row"><span class="tick">✓</span> Magic Keyboard <span class="grow">›</span></div>
-        <div class="row"><span class="tick"></span> Magic Trackpad <span class="grow">›</span></div>
-        <div class="sep"></div>
-        <div class="row"><span class="tick"></span> Settings… <span class="grow">⌘,</span></div>
-      </div>
     </div>
   </div>
 </section>
@@ -195,7 +189,7 @@
       <li><strong>Bluetooth.</strong> To connect and disconnect your keyboard, mouse and trackpad. That's the whole job.</li>
       <li><strong>Local network.</strong> To find your other Macs and tell them when a device is on its way.</li>
       <li><strong>Notifications.</strong> Only to tell you if a handover failed. Say no and it just stays quiet.</li>
-      <li><strong>Your keychain.</strong> Baton keeps your pairing code and licence key there, the same place Safari keeps passwords. It reads only its own entries, and macOS won't prompt for them unless you've had a different build of Baton on the same Mac before.</li>
+      <li><strong>Your keychain.</strong> Baton keeps your pairing code and licence key there, the same place Safari keeps passwords. It reads only its own entries.</li>
     </ul>
   </div>
 </section>
@@ -265,6 +259,11 @@
         <summary>What if the handover fails?
           <svg class="plus" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary>
         <p class="answer">Baton checks the other Mac is listening before it lets go. If it still fails, the device comes back to the Mac it was on.</p>
+      </details>
+      <details>
+        <summary>How many Macs?
+          <svg class="plus" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p class="answer">Every Mac you own, up to five at a time. Pair a new one with your code and it takes the licence from the others by itself. Replacing a machine? Free up its slot and activate the new one.</p>
       </details>
       <details>
         <summary>I lost my key.
@@ -338,44 +337,58 @@ var CHECKOUT_URL = "https://buy.polar.sh/polar_cl_WAfmErQFpUTaN92ozeJsTxJIsAhnrU
   }
 })();
 
-// The hero demo. It advances on its own so the page explains itself at a
-// glance, and stops for good the moment a visitor takes over.
-(function () {
-  var chip = document.getElementById('chip');
-  var macA = document.getElementById('macA');
-  var macB = document.getElementById('macB');
-  var btn = document.getElementById('demoBtn');
-  var caption = document.getElementById('demoCaption');
-  if (!chip || !btn) return;
 
-  var right = false;
-  var timer = null;
+// "How does it work?" — the panel drives the desk. Nothing moves until you
+// press a button, and the panel's own state changes exactly as the app's does.
+(function () {
+  var here = true;
+  var busy = false;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var kbd = document.getElementById('kbd');
+  var desk = document.getElementById('desk');
+  var A = document.getElementById('deskA'), B = document.getElementById('deskB');
+  var btnBring = document.getElementById('btnBring'), btnSend = document.getElementById('btnSend');
+  if (!kbd || !btnBring) return;
+  var lane = desk.querySelector('.lane');
+  function measure() { lane.style.setProperty('--lane', Math.max(0, lane.clientWidth - 96) + 'px'); }
+  measure();
+  window.addEventListener('resize', measure);
+  if (window.ResizeObserver) { new ResizeObserver(measure).observe(lane); }
 
   function render() {
-    chip.classList.toggle('is-right', right);
-    macA.classList.toggle('is-active', !right);
-    macB.classList.toggle('is-active', right);
-    macA.querySelector('.mac-state').textContent = right ? 'Ready' : 'Has the keyboard';
-    macB.querySelector('.mac-state').textContent = right ? 'Has the keyboard' : 'Ready';
-    btn.textContent = right ? 'Bring it back' : 'Hand it over';
-    caption.textContent = right
-      ? 'The MacBook has it now. Your Studio let go on its own.'
-      : 'Click a Mac. The keyboard goes there.';
+    document.getElementById('pHead').textContent = here ? '1 of 1 on this Mac' : '0 of 1 on this Mac';
+    document.getElementById('bringSub').textContent = here ? 'already here' : '1 elsewhere';
+    document.getElementById('sendSub').textContent = here ? 'MacBook Pro' : 'already away';
+    document.getElementById('pState').textContent = here ? 'here' : 'away';
+    document.getElementById('macA').textContent = here ? 'all here' : '';
+    document.getElementById('macB').textContent = here ? '' : 'has the keyboard';
+    btnBring.disabled = here || busy;
+    btnSend.disabled = !here || busy;
+    kbd.classList.toggle('at-b', !here);
+    A.classList.toggle('holds', here);
+    B.classList.toggle('holds', !here);
   }
 
-  function toggle() { right = !right; render(); }
-
-  function stopAuto() {
-    if (timer) { clearInterval(timer); timer = null; }
+  function go(toHere) {
+    if (busy || toHere === here) return;
+    measure();   // the lane may not have had a size when the page loaded
+    busy = true;
+    desk.classList.add('moving');
+    btnBring.disabled = btnSend.disabled = true;
+    kbd.classList.toggle('at-b', !toHere);
+    var done = function () {
+      here = toHere; busy = false;
+      desk.classList.remove('moving');
+      render();
+    };
+    if (reduced) { done(); } else { setTimeout(done, 820); }
   }
 
-  btn.addEventListener('click', function () { stopAuto(); toggle(); });
-
-  if (!reduced) {
-    timer = setInterval(toggle, 3600);
-  }
+  btnSend.addEventListener('click', function () { go(false); });
+  btnBring.addEventListener('click', function () { go(true); });
   render();
+  // batonapp.uk/#away opens with the keyboard on the other Mac.
+  if (location.hash === '#away') { here = false; render(); }
 })();
 </script>
 </body>

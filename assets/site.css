@@ -309,3 +309,83 @@ section { padding-block: var(--s9); }
   width: 8px; height: 8px; border-radius: 50%; background: var(--coral);
 }
 .plain-list strong { color: var(--text); font-weight: 600; }
+
+/* ---------- Centered hero ---------- */
+.hero-centered { text-align: center; padding-block: var(--s10) var(--s9); }
+.hero-centered .lede, .hero-centered .cta-row, .hero-centered .meta-row { margin-left: auto; margin-right: auto; justify-content: center; }
+.hero-centered .lede { max-width: 46ch; }
+.hero-centered h1 { font-size: clamp(3rem, 8.5vw, 5.6rem); }
+
+/* ---------- How does it work: panel replica + desk ---------- */
+.demo2 {
+  display: grid; gap: var(--s6); margin-top: var(--s7);
+  align-items: center;
+}
+@media (min-width: 900px) { .demo2 { grid-template-columns: 300px 1fr; gap: var(--s8); } }
+
+.panel {
+  width: 300px; max-width: 100%;
+  background: var(--ink-800); border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: var(--shadow-float);
+  font-size: 13px; color: var(--text);
+  isolation: isolate;
+}
+.p-head { display: flex; gap: 8px; align-items: center; padding: 10px 12px; color: var(--mute); }
+.p-title { font-weight: 600; color: var(--text); font-size: 13px; }
+.p-sub { font-size: 11px; color: var(--mute); }
+.p-sep { height: 1px; background: var(--line-soft); }
+.p-big { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 12px; }
+.p-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 12px 8px; border-radius: 9px; border: 0; cursor: pointer;
+  background: rgba(255,255,255,.07); color: var(--text); font: inherit;
+  transition: background-color 140ms ease, opacity 140ms ease, transform 140ms ease;
+}
+.p-btn:hover:not(:disabled) { background: rgba(255,255,255,.12); }
+.p-btn:active:not(:disabled) { transform: translateY(1px); }
+.p-btn:disabled { opacity: .45; cursor: default; background: rgba(255,255,255,.03); }
+.p-btn:focus-visible { outline: 2px solid var(--coral); outline-offset: 2px; }
+.p-btn-t { font-size: 12px; font-weight: 600; }
+.p-btn-s { font-size: 10px; color: var(--mute); }
+.p-label { font-size: 10px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--mute); padding: 8px 12px 4px; }
+.p-row { display: flex; align-items: center; gap: 8px; padding: 5px 12px; }
+.p-row svg { color: var(--mute); flex: none; }
+.p-row > span:first-of-type { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.p-state { font-size: 10px; color: var(--mute); }
+.p-chev { color: var(--line); font-size: 12px; }
+.p-foot { display: flex; justify-content: space-between; padding: 8px 12px 10px; font-size: 12px; color: var(--coral-hi); }
+
+.desk {
+  position: relative; isolation: isolate;
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--s4);
+  padding: var(--s6) var(--s5);
+  border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--ink-850);
+  min-height: 220px;
+}
+.mac2 { text-align: center; color: var(--mute); transition: color 320ms ease; }
+.mac2.holds { color: var(--coral-hi); }
+.mac2-name { margin-top: var(--s2); font-size: .85rem; font-weight: 560; color: var(--soft); }
+.lane { position: relative; height: 70px; }
+.lane-line {
+  position: absolute; left: 0; right: 0; top: 50%; height: 1px;
+  background: var(--line); transform: translateY(-50%);
+}
+.desk.moving .lane-line { background: var(--coral); }
+.kbd {
+  position: absolute; top: 50%; left: 0;
+  width: 96px; height: 40px; margin-top: -20px;
+  color: var(--coral);
+  transition: transform 800ms cubic-bezier(.34,.9,.3,1);
+  will-change: transform;
+}
+.kbd.at-b { transform: translateX(var(--lane, 0px)); }
+/* A small lift while in flight, so it reads as picked up rather than slid. */
+.kbd svg { display: block; transition: transform 400ms ease-out; }
+.desk.moving .kbd svg { transform: translateY(-10px); }
+@media (prefers-reduced-motion: reduce) { .kbd, .kbd svg { transition: none; } }
+/* Keep a runway for the keyboard on narrow screens; shrink the Macs instead. */
+.lane { min-width: 110px; }
+@media (max-width: 520px) {
+  .mac2 svg { width: 84px; height: 59px; }
+  .desk { padding: var(--s5) var(--s4); gap: var(--s3); }
+}
