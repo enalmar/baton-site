@@ -1,6 +1,6 @@
 # Baton — website
 
-Marketing site for [Baton](https://enalmar.github.io/baton-site/), a macOS menu
+Marketing site for [Baton](https://batonapp.uk/), a macOS menu
 bar app that hands Magic peripherals between Macs.
 
 Plain static HTML, no build step. Served by GitHub Pages from `main` at the
