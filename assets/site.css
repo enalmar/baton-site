@@ -289,3 +289,23 @@ section { padding-block: var(--s9); }
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
 }
+
+/* ---------- Screenshots ---------- */
+.shots { display: grid; gap: var(--s5); margin-top: var(--s8); }
+@media (min-width: 860px) { .shots { grid-template-columns: 1fr 1fr; gap: var(--s6); } }
+.shots figure { margin: 0; }
+.shots img {
+  display: block; width: 100%; height: auto;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow-float);
+}
+.shots figcaption { margin-top: var(--s3); font-size: .875rem; color: var(--mute); }
+
+/* ---------- Plain list ---------- */
+.plain-list { list-style: none; padding: 0; margin: var(--s6) 0 0; max-width: var(--measure); display: grid; gap: var(--s4); }
+.plain-list li { color: var(--soft); font-size: 1rem; line-height: 1.55; padding-left: var(--s5); position: relative; }
+.plain-list li::before {
+  content: ""; position: absolute; left: 0; top: .62em;
+  width: 8px; height: 8px; border-radius: 50%; background: var(--coral);
+}
+.plain-list strong { color: var(--text); font-weight: 600; }

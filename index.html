@@ -33,33 +33,29 @@
 
 <main>
 
-<!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
       <p class="eyebrow">macOS menu bar app</p>
       <h1>One keyboard.<br><span class="accent">Every Mac.</span></h1>
       <p class="lede">
-        Move your Magic Keyboard, Mouse and Trackpad between Macs from the
-        menu bar. No cable, no re-pairing.
+        Baton moves your Magic Keyboard, Mouse and Trackpad from one Mac to
+        another. Click the Mac you want. That's it.
       </p>
       <div class="cta-row">
         <!-- PRICE appears here and in the pricing card. Change both. -->
         <a class="btn btn-primary" href="#pricing">Buy Baton — $15 once</a>
-        <a class="btn btn-ghost" href="https://github.com/enalmar/baton-site/releases">
-          Download the free trial
-        </a>
+        <a class="btn btn-ghost" href="https://github.com/enalmar/baton-site/releases">Try it free for 14 days</a>
       </div>
       <div class="meta-row">
         <span>macOS 14 or later</span>
         <span>·</span>
         <span>Apple silicon &amp; Intel</span>
         <span>·</span>
-        <span>14 days free, no card</span>
+        <span>No card for the trial</span>
       </div>
     </div>
 
-    <!-- Live demonstration of the handoff, not decoration. -->
     <div class="demo">
       <p class="eyebrow demo-label">The handoff</p>
       <div class="demo-stage">
@@ -104,68 +100,62 @@
 
 <hr class="rule">
 
-<!-- ============ WHY ============ -->
 <section>
   <div class="wrap">
-    <h2>Two Macs. One good keyboard.</h2>
+    <h2>You've got two Macs and one good keyboard.</h2>
     <p class="body" style="margin-top:var(--s4)">
-      Magic peripherals pair with several Macs but connect to one at a time.
-      Switching normally means Bluetooth settings on both machines. Baton makes
-      it a click.
+      A Magic Keyboard will happily pair with both, but it only talks to one
+      at a time. So every switch means Bluetooth settings on this Mac, then
+      Bluetooth settings on that Mac, then waiting.
     </p>
-    <div class="grid grid-3" style="margin-top:var(--s7)">
-      <div class="card">
-        <div class="ico">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
-        </div>
-        <h3>Release, then take</h3>
-        <p>The Mac you leave drops the pairing so it stops grabbing the device back. The other one connects itself.</p>
-      </div>
-      <div class="card">
-        <div class="ico">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18"/><path d="M5 8h14"/><circle cx="12" cy="16" r="3"/></svg>
-        </div>
-        <h3>Nothing gets stranded</h3>
-        <p>It checks the other Mac is listening first. If the handover fails, your keyboard comes back.</p>
-      </div>
-      <div class="card">
-        <div class="ico">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-        </div>
-        <h3>Stays on your network</h3>
-        <p>Your Macs talk directly, encrypted with a code only you have. Nothing routes through a server.</p>
-      </div>
-    </div>
+    <p class="body" style="margin-top:var(--s3)">
+      Baton does that bit for you. The Mac you're leaving lets go, the Mac
+      you're going to picks it up. If anything goes wrong, the keyboard comes
+      back to where it was.
+    </p>
   </div>
 </section>
 
 <hr class="rule">
 
-<!-- ============ HOW ============ -->
 <section id="how">
   <div class="wrap">
-    <p class="eyebrow">Setup takes about two minutes</p>
-    <h2 style="margin-top:var(--s3)">How it works</h2>
+    <h2>Setting up</h2>
+    <p class="body" style="margin-top:var(--s4)">Two minutes, once.</p>
+
     <div class="steps" style="margin-top:var(--s7)">
       <div class="step">
-        <h3>Pair once, the normal way</h3>
-        <p>Pair each device with each Mac one time in Bluetooth settings. Baton takes over from there.</p>
+        <h3>Pair the normal way</h3>
+        <p>Pair each device with each Mac in Bluetooth settings, like you would anyway.</p>
       </div>
       <div class="step">
-        <h3>Enter the same code</h3>
-        <p>Baton gives you a twelve-character code. Type it on each Mac. It doubles as the encryption key.</p>
+        <h3>Type in one code</h3>
+        <p>Baton gives you a short code. Enter it on every Mac so they can find each other.</p>
       </div>
       <div class="step">
-        <h3>Click to hand over</h3>
-        <p>Pick a Mac to send everything, or move one device from its submenu.</p>
+        <h3>Tick what to move</h3>
+        <p>Choose which devices Baton looks after. Done.</p>
       </div>
+    </div>
+
+    <div class="shots">
+      <figure>
+        <img src="assets/settings-macs.png" alt="Baton's Macs settings, showing this Mac paired with a fingerprint and listening for others" loading="lazy">
+        <figcaption>Every Mac with the same code shows up here.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/settings-licence.png" alt="Baton's Licence settings, showing the trial with 14 days left and a field to paste a key" loading="lazy">
+        <figcaption>Fourteen days free, then paste your key.</figcaption>
+      </figure>
     </div>
 
     <div class="grid grid-2" style="margin-top:var(--s8); align-items:center">
       <div>
-        <h3 style="font-size:1.3rem">The whole interface</h3>
+        <h3 style="font-size:1.3rem">Then it's just this</h3>
         <p class="body" style="margin-top:var(--s3); font-size:.98rem">
-          No Dock icon, no window. A checkmark shows what's on this Mac now.
+          The menu lives in your menu bar. Click a Mac to send everything
+          there, or open a device and send just that one. The tick shows
+          what's on this Mac right now.
         </p>
       </div>
       <div class="menu-mock" role="img" aria-label="Baton's menu bar dropdown showing two Macs and two peripherals, with the Magic Keyboard currently on this Mac">
@@ -188,84 +178,58 @@
 
 <hr class="rule">
 
-<!-- ============ FEATURES ============ -->
 <section id="features">
   <div class="wrap">
-    <h2>What you get</h2>
-    <div class="grid grid-3" style="margin-top:var(--s7)">
-      <div class="card">
-        <h3>Move everything at once</h3>
-        <p>Send your whole desk to another Mac in one click.</p>
-      </div>
-      <div class="card">
-        <h3>Or just one thing</h3>
-        <p>Send the trackpad to the laptop, keep typing on the desktop.</p>
-      </div>
-      <div class="card">
-        <h3>Hands over at sleep</h3>
-        <p>A sleeping Mac lets go, and takes its devices back when it wakes.</p>
-      </div>
-      <div class="card">
-        <h3>As many Macs as you own</h3>
-        <p>Every Mac with the code appears in the menu automatically.</p>
-      </div>
-      <div class="card">
-        <h3>No account, no cloud</h3>
-        <p>Nothing to sign into. Your Macs find each other on your network.</p>
-      </div>
-      <div class="card">
-        <h3>Signed and notarised</h3>
-        <p>Sandboxed and notarised by Apple. Asks for Bluetooth and your local network, nothing else.</p>
-      </div>
-    </div>
+    <h2>Good to know</h2>
+    <ul class="plain-list">
+      <li><strong>Works with any number of Macs.</strong> Two, three, the one in the office. They all show up in the menu.</li>
+      <li><strong>Move one thing or everything.</strong> Send the trackpad to the laptop and keep the keyboard where it is.</li>
+      <li><strong>Handles sleep.</strong> A sleeping Mac lets go of its devices and takes them back when it wakes.</li>
+      <li><strong>Nothing leaves your network.</strong> Your Macs talk to each other directly. There's no account and no server in the middle.</li>
+      <li><strong>Notarised by Apple.</strong> Sandboxed, and it only asks for Bluetooth and your local network.</li>
+    </ul>
   </div>
 </section>
 
 <hr class="rule">
 
-<!-- ============ PRICING ============ -->
 <section id="pricing">
   <div class="wrap">
     <p class="eyebrow">Pricing</p>
-    <h2 style="margin-top:var(--s3)">Pay once. That's it.</h2>
-    <p class="body" style="margin-top:var(--s4)">
-      No subscription, no account. Fourteen days free first.
-    </p>
+    <h2 style="margin-top:var(--s3)">Pay once. Use it on all your Macs.</h2>
 
     <div class="grid grid-2" style="margin-top:var(--s7); align-items:start; gap:var(--s8)">
     <div class="price-card">
-      <p class="eyebrow">Baton — personal licence</p>
+      <p class="eyebrow">Baton</p>
       <div class="price-tag">
         <!-- PRICE also appears in the hero button. Change both. -->
         <span class="amount">$15</span>
-        <span class="per">once, yours forever</span>
+        <span class="per">one payment</span>
       </div>
-      <p class="small">Includes VAT and sales tax where it applies.</p>
+      <p class="small">Tax included.</p>
       <ul class="ticks">
-        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m4 12 6 6L20 6"/></svg> Every Mac you personally own</li>
-        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m4 12 6 6L20 6"/></svg> All future updates</li>
-        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m4 12 6 6L20 6"/></svg> A key by email, no account to make</li>
-        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m4 12 6 6L20 6"/></svg> Refund within 30 days</li>
+        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m4 12 6 6L20 6"/></svg> All the Macs you own</li>
+        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m4 12 6 6L20 6"/></svg> Updates included</li>
+        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m4 12 6 6L20 6"/></svg> Key arrives by email, no account</li>
+        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m4 12 6 6L20 6"/></svg> 30-day refund, no questions</li>
       </ul>
       <a class="btn btn-primary" id="buyBtn" href="#" style="width:100%">Buy Baton</a>
-      <p class="small" id="buyNote" hidden style="margin-top:var(--s3); color:var(--amber)"></p>
+      <p class="small" id="buyNote" hidden style="margin-top:var(--s3); color:var(--coral-hi)"></p>
       <p class="small" style="margin-top:var(--s4)">
-        Or <a href="https://github.com/enalmar/baton-site/releases" style="color:var(--soft)">download the trial</a> and decide later.
+        Not sure yet? <a href="https://github.com/enalmar/baton-site/releases" style="color:var(--soft)">Try it free for 14 days</a> first.
       </p>
     </div>
 
     <div>
-      <h3 style="font-size:1.05rem">One licence, all your Macs</h3>
-      <p class="body" style="margin-top:var(--s2); font-size:.95rem">
-        Home and work. Replacing a machine? Free up its slot and activate the
-        new one. A second licence is only for a second person.
+      <p class="body" style="font-size:.98rem">
+        The trial does everything the paid version does. When it ends, Baton
+        stops switching but leaves your devices exactly where they are. Enter
+        a key and it carries on.
       </p>
-
-      <h3 style="font-size:1.05rem; margin-top:var(--s6)">Payment and refunds</h3>
-      <p class="body" style="margin-top:var(--s2); font-size:.95rem">
-        Handled by Polar. Tax is already in the price and your card details
-        never touch this site. Thirty days to
-        <a href="support/" style="color:var(--coral)">change your mind</a>.
+      <p class="body" style="margin-top:var(--s4); font-size:.98rem">
+        Payment goes through Polar, so your card details never touch this
+        site. If you replace a Mac, free up its slot from your Polar
+        purchases page and activate the new one.
       </p>
     </div>
     </div>
@@ -274,45 +238,34 @@
 
 <hr class="rule">
 
-<!-- ============ FAQ ============ -->
 <section>
   <div class="wrap">
     <h2>Questions</h2>
     <div class="faq" style="margin-top:var(--s6)">
       <details>
-        <summary>Which peripherals does it work with?
+        <summary>Which devices?
           <svg class="plus" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary>
-        <p class="answer">Magic Keyboard, Magic Mouse and Magic Trackpad from 2015 on. Other Bluetooth devices often work, but aren't supported.</p>
+        <p class="answer">Magic Keyboard, Magic Mouse and Magic Trackpad, 2015 or newer. Other Bluetooth keyboards and mice often work but aren't supported.</p>
       </details>
       <details>
-        <summary>Do I need an internet connection?
+        <summary>Does it need the internet?
           <svg class="plus" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary>
-        <p class="answer">Only to buy and activate. After that it runs on your own network, and keeps working for a month with no connection at all.</p>
+        <p class="answer">Only to activate your key. After that it runs on your own network and keeps working for a month with no connection at all.</p>
       </details>
       <details>
-        <summary>How many Macs can I use it on?
+        <summary>What if the handover fails?
           <svg class="plus" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary>
-        <p class="answer">Every Mac you own. Replace a machine and you can move its slot across.</p>
+        <p class="answer">Baton checks the other Mac is listening before it lets go. If it still fails, the device comes back to the Mac it was on.</p>
       </details>
       <details>
-        <summary>What happens when the trial ends?
+        <summary>I lost my key.
           <svg class="plus" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary>
-        <p class="answer">Switching pauses. Nothing is released, so whatever you were using stays connected. Enter a key and it resumes.</p>
+        <p class="answer">It's in your receipt email from Polar. Can't find it? <a href="support/">Email me</a> from the address you paid with.</p>
       </details>
       <details>
-        <summary>I lost my licence key.
+        <summary>Why not the App Store?
           <svg class="plus" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary>
-        <p class="answer">It's in your receipt email. Can't find it? <a href="support/">Email us</a> from the address you paid with.</p>
-      </details>
-      <details>
-        <summary>Is my typing sent anywhere?
-          <svg class="plus" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary>
-        <p class="answer">No. Baton connects and disconnects Bluetooth devices. It never reads what you type. See the <a href="privacy/">privacy note</a>.</p>
-      </details>
-      <details>
-        <summary>Why isn't this on the Mac App Store?
-          <svg class="plus" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary>
-        <p class="answer">Unpairing a device isn't allowed under App Store sandbox rules. So it's notarised by Apple and sold directly.</p>
+        <p class="answer">Unpairing a Bluetooth device isn't allowed in App Store apps. So Baton is notarised by Apple and sold here instead.</p>
       </details>
     </div>
   </div>
@@ -323,10 +276,10 @@
     <div class="closer">
       <div>
         <h2>Put it on both Macs tonight.</h2>
-        <p class="small" style="margin-top:var(--s2)">Fourteen days free. No card.</p>
+        <p class="small" style="margin-top:var(--s2)">Free for 14 days. No card.</p>
       </div>
       <div class="closer-cta">
-        <a class="btn btn-ghost" href="https://github.com/enalmar/baton-site/releases">Download the trial</a>
+        <a class="btn btn-ghost" href="https://github.com/enalmar/baton-site/releases">Download</a>
         <a class="btn btn-primary" href="#pricing">Buy — $15 once</a>
       </div>
     </div>
@@ -346,7 +299,7 @@
     </div>
   </div>
   <div class="wrap" style="margin-top:var(--s5)">
-    <p class="small">Made in Spain. Not affiliated with Apple. Magic Keyboard, Magic Mouse, Magic Trackpad and Mac are trademarks of Apple Inc.</p>
+    <p class="small">Made in Spain by one person. Not affiliated with Apple. Magic Keyboard, Magic Mouse, Magic Trackpad and Mac are trademarks of Apple Inc.</p>
   </div>
 </footer>
 
