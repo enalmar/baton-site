@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Using one Magic Keyboard with two Macs | Baton</title>
+<meta name="description" content="Why a Magic Keyboard only connects to one Mac at a time, what people do about it, and how to switch a Magic Keyboard, Mouse or Trackpad between Macs from the menu bar.">
+<link rel="icon" href="../assets/icon-256.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icon-256.png">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="canonical" href="https://batonapp.uk/one-keyboard-two-macs/">
+<meta name="theme-color" content="#0C0C11">
+<meta property="og:title" content="Using one Magic Keyboard with two Macs">
+<meta property="og:description" content="Why a Magic Keyboard only connects to one Mac at a time, and what you can do about it.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://batonapp.uk/assets/icon.png">
+<meta property="og:image:alt" content="The Baton app icon">
+<meta property="og:url" content="https://batonapp.uk/one-keyboard-two-macs/">
+<meta property="og:site_name" content="Baton">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Using one Magic Keyboard with two Macs">
+<meta name="twitter:description" content="Why a Magic Keyboard only connects to one Mac at a time, and what you can do about it.">
+<meta name="twitter:image" content="https://batonapp.uk/assets/icon.png">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../assets/icon-256.png" alt="">Baton</a>
+    <nav class="nav">
+      <a href="../#pricing">Pricing</a>
+      <a class="btn btn-ghost btn-sm" href="../">Home</a>
+    </nav>
+  </div>
+</header>
+
+<main><section><div class="wrap prose">
+
+<h1 style="font-size:2.4rem">Using one Magic Keyboard with two Macs</h1>
+
+<p class="lede" style="margin-top:var(--s5)">A Magic Keyboard can be paired with
+several Macs. It can only talk to one of them at a time. That is the whole
+problem, and it isn't a fault in your setup.</p>
+
+<h2>Why it only connects to one Mac</h2>
+
+<p>Apple's Magic Keyboard, Magic Mouse and Magic Trackpad, 2015 and later, will
+remember more than one Mac. What they won't do is hold more than one Bluetooth
+link at once. Whichever Mac has the live connection owns the peripheral, and the
+other Mac sees nothing, because from its side there is nothing there.</p>
+
+<p>There's no key combination for this and no setting. macOS has never shipped a
+switch for it. So people invent one.</p>
+
+<h2>The three things people do instead</h2>
+
+<p><strong>Re-pair by hand.</strong> Open System Settings, Bluetooth, on the Mac
+that currently has the keyboard. Disconnect it. Walk to the other Mac, connect
+it there. It works, and it takes about twenty seconds every single time you move
+between machines.</p>
+
+<p><strong>Buy a keyboard built for it.</strong> Some third-party keyboards are
+made to pair with more than one machine and switch between them on their own.
+They're good keyboards. They're also not a Magic Keyboard, and if you own a Magic
+Trackpad the problem is still sitting on your desk.</p>
+
+<p><strong>Keep a second set.</strong> Another keyboard, another mouse, another
+thing to charge. Fine if you have the space, and a lot of people quietly do
+this.</p>
+
+<h2>What Baton does about it</h2>
+
+<p>Baton is the switch macOS never shipped. It's a menu bar app. You click the
+Mac you want, and the peripherals you've ticked go there.</p>
+
+<p>Underneath it's two moves. The Mac that currently owns the peripheral drops
+the Bluetooth bond, so macOS stops reconnecting to it. The Mac you picked then
+opens its own bond, or pairs from scratch if it has to. Magic devices use Just
+Works pairing, so nothing appears asking you to confirm a code.</p>
+
+<p>If the second move fails, the Mac you started from takes the peripheral back
+and says so. You shouldn't end up with a keyboard attached to nothing.</p>
+
+<p>The Macs find each other over Bonjour on your own network. They talk over TLS
+using a key derived from a twelve-character code you type in once, with PBKDF2
+at 600,000 iterations. A Mac that doesn't have your code fails the handshake and
+gets ignored. None of that goes through a server, because there isn't one in the
+middle, and there's no account to make. The one time Baton needs the internet is
+to activate your licence.</p>
+
+<h2>What it doesn't do</h2>
+
+<p><strong>It won't do the first pairing for you.</strong> Pair each peripheral
+with each Mac once, the normal way, in System Settings. Baton moves ownership
+after that. It doesn't create it.</p>
+
+<p><strong>Both Macs have to be on the same network</strong>, with Local Network
+permission granted in System Settings, Privacy &amp; Security. Some guest and
+office networks block the discovery Baton relies on, and on those the Macs never
+find each other.</p>
+
+<p><strong>A released device stops listening eventually.</strong> If a peripheral
+ends up attached to no Mac at all, switch it off and on and choose Bring to This
+Mac.</p>
+
+<p><strong>Magic peripherals, 2015 or newer.</strong> Other Bluetooth keyboards
+and mice often work. They aren't supported, and I'd rather say that than let you
+find out after paying.</p>
+
+<p><strong>It isn't on the Mac App Store.</strong> Unpairing a Bluetooth device
+isn't something App Store apps are allowed to do, which is the entire reason this
+app can exist outside it. Baton is notarised by Apple and sold here instead.</p>
+
+<h2>Price</h2>
+
+<p>Nine dollars, once. There's a fourteen-day trial, and the trial only gates
+switching, so nothing is ever released on the way out. An expired trial can't
+strand your keyboard on a Mac you've walked away from.</p>
+
+<p style="margin-top:var(--s6)">
+  <a class="btn btn-primary" href="../#pricing">See the pricing</a>
+  <a class="btn btn-ghost" href="../">How it works</a>
+</p>
+
+</div></section></main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <a class="brand" href="../"><img src="../assets/icon-256.png" alt="">Baton</a>
+    <div class="foot-links">
+      <a href="../license/">Licence help</a><a href="../privacy/">Privacy</a><a href="../support/">Support</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
