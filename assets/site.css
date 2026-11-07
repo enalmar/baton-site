@@ -201,7 +201,7 @@ section { padding-block: var(--s9); }
   position: absolute; left: -12%; right: -12%; top: -14%; bottom: 0;
   background:
     radial-gradient(50% 40% at 50% 38%, rgba(120, 150, 255, .30), transparent 70%),
-    radial-gradient(40% 14% at 50% 96%, rgba(255, 122, 92, .22), transparent 70%);
+    radial-gradient(40% 14% at 50% 96%, rgba(140, 160, 255, .18), transparent 70%);
   opacity: 0; transition: opacity 900ms ease;
   pointer-events: none;
 }
@@ -238,7 +238,7 @@ section { padding-block: var(--s9); }
 .kbd svg { display: block; width: 100%; height: auto; filter: drop-shadow(0 1px 0 rgba(0, 0, 0, .35)); }
 .kbd-shadow {
   height: 18px; bottom: 54px; border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(255, 122, 92, .55), rgba(255, 122, 92, 0));
+  background: radial-gradient(closest-side, rgba(0, 0, 0, .7), rgba(0, 0, 0, 0));
   filter: blur(4px);
 }
 .desk:not(.ready) .kbd, .desk:not(.ready) .kbd-shadow { visibility: hidden; }

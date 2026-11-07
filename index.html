@@ -8,7 +8,7 @@
 <link rel="icon" href="assets/icon-256.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/icon-256.png">
 <link rel="preload" href="assets/fonts/big-shoulders-display.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/site.css?v=5">
+<link rel="stylesheet" href="assets/site.css?v=6">
 <meta property="og:title" content="Baton — move your Magic Keyboard between Macs in one click">
 <meta property="og:description" content="Hand your Magic Keyboard, Mouse and Trackpad between Macs from the menu bar. No cable, no re-pairing.">
 <meta property="og:type" content="website">
@@ -104,6 +104,32 @@
             <linearGradient id="wallBase" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0" stop-color="#1B3A86"/><stop offset=".6" stop-color="#11275A"/><stop offset="1" stop-color="#2A1640"/>
             </linearGradient>
+            <!-- Aluminium seen edge-on: a bright rim with a darker lower lip. -->
+            <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#F4F5F8"/><stop offset=".5" stop-color="#D5D9E0"/><stop offset="1" stop-color="#A9B0BC"/>
+            </linearGradient>
+            <linearGradient id="arm" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#8E95A2"/><stop offset=".35" stop-color="#C9CED7"/><stop offset=".6" stop-color="#DDE1E7"/><stop offset="1" stop-color="#9AA1AE"/>
+            </linearGradient>
+            <linearGradient id="armShade" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset=".35" stop-color="#000" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="deck" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#B9BFCA"/><stop offset="1" stop-color="#E4E7EC"/>
+            </linearGradient>
+            <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#C5CAD3"/><stop offset=".4" stop-color="#9DA4B1"/><stop offset="1" stop-color="#6F7684"/>
+            </linearGradient>
+            <linearGradient id="hinge" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#1A1D23"/><stop offset="1" stop-color="#4A505B"/>
+            </linearGradient>
+            <linearGradient id="key" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E6E8ED"/>
+            </linearGradient>
+            <linearGradient id="kbTop" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#D3D7DE"/><stop offset="1" stop-color="#E9ECF0"/>
+            </linearGradient>
+            <filter id="contact" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="3"/></filter>
             <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="13"/></filter>
             <!-- An original wallpaper in the site's colours, with a menu bar and a Dock. -->
             <symbol id="wall" viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice">
@@ -113,6 +139,16 @@
                 <circle cx="26" cy="18" r="36" fill="#5B7FFF" opacity=".7"/>
                 <circle cx="150" cy="12" r="20" fill="#FFB38F" opacity=".6"/>
                 <circle cx="62" cy="96" r="24" fill="#7A4BD1" opacity=".55"/>
+              </g>
+              <g>
+                <rect x="20" y="15" width="74" height="48" rx="3" fill="#000" opacity=".25" transform="translate(0 1.5)"/>
+                <rect x="20" y="15" width="74" height="48" rx="3" fill="#F5F6F9"/>
+                <path d="M23 15h-0a3 3 0 0 0-3 3v45h20V15z" fill="#E6E9EF"/>
+                <circle cx="24.5" cy="18.8" r="1.3" fill="#FF5F57"/><circle cx="28.5" cy="18.8" r="1.3" fill="#FEBC2E"/><circle cx="32.5" cy="18.8" r="1.3" fill="#28C840"/>
+                <g fill="#B8BECA"><rect x="23" y="25" width="12" height="1.6" rx=".8"/><rect x="23" y="29" width="10" height="1.6" rx=".8"/><rect x="23" y="33" width="13" height="1.6" rx=".8"/><rect x="23" y="37" width="9" height="1.6" rx=".8"/></g>
+                <rect x="44" y="18" width="20" height="2" rx="1" fill="#C3C8D2"/>
+                <g fill="#7FA4FF"><rect x="45" y="26" width="9" height="7" rx="1.2"/><rect x="59" y="26" width="9" height="7" rx="1.2"/><rect x="73" y="26" width="9" height="7" rx="1.2"/><rect x="45" y="40" width="9" height="7" rx="1.2"/><rect x="59" y="40" width="9" height="7" rx="1.2"/></g>
+                <g fill="#C3C8D2"><rect x="45" y="35" width="9" height="1.4" rx=".7"/><rect x="59" y="35" width="9" height="1.4" rx=".7"/><rect x="73" y="35" width="9" height="1.4" rx=".7"/><rect x="45" y="49" width="9" height="1.4" rx=".7"/><rect x="59" y="49" width="9" height="1.4" rx=".7"/></g>
               </g>
               <rect width="160" height="5.5" fill="#fff" opacity=".16"/>
               <g fill="#fff" opacity=".8">
@@ -143,16 +179,23 @@
         <div class="desk-row">
           <figure class="mac mac-display awake holds" id="deskA">
             <div class="mac-glow" aria-hidden="true"></div>
-            <svg viewBox="0 0 240 196" role="img" aria-label="A desktop Mac with a display">
-              <path d="M102 148h36l10 42H92z" fill="url(#aluBase)"/>
-              <rect x="84" y="188" width="72" height="6" rx="3" fill="#A3AAB7"/>
-              <rect width="240" height="150" rx="9" fill="url(#alu)"/>
-              <rect x="3" y="3" width="234" height="144" rx="7" fill="#06080C"/>
+            <svg viewBox="0 0 300 252" role="img" aria-label="A Mac with a 27-inch display on a stand">
+              <ellipse cx="150" cy="246" rx="62" ry="3.5" fill="#000" opacity=".55" filter="url(#contact)"/>
+              <!-- Stand: one slab of aluminium behind the display, then the foot. -->
+              <rect x="131" y="170" width="38" height="66" fill="url(#arm)"/>
+              <rect x="131" y="170" width="38" height="66" fill="url(#armShade)"/>
+              <rect x="104" y="233" width="92" height="9" rx="3" fill="url(#deck)"/>
+              <path d="M104 238h92v2q0 4-4 4h-84q-4 0-4-4z" fill="url(#edge)"/>
+              <!-- Display: aluminium rim, black glass, the screen. -->
+              <rect width="300" height="176" rx="7" fill="url(#rim)"/>
+              <rect x="1.6" y="1.6" width="296.8" height="172.8" rx="5.6" fill="#08090C"/>
+              <circle cx="150" cy="5.2" r="1.25" fill="#1E2533"/><circle cx="149.7" cy="4.9" r=".4" fill="#5C6B8A"/>
               <g class="scr">
-                <rect class="scr-back" x="9" y="9" width="222" height="132" fill="#18213A"/>
-                <g class="scr-on"><use href="#wall" x="9" y="9" width="222" height="132"/></g>
-                <use class="hud" href="#hud" x="9" y="9" width="222" height="132"/>
-                <rect x="9" y="9" width="222" height="132" fill="url(#glare)"/>
+                <rect x="9" y="9" width="282" height="158" fill="#0C0E13"/>
+                <rect class="scr-back" x="9" y="9" width="282" height="158" fill="#18213A"/>
+                <g class="scr-on"><use href="#wall" x="9" y="9" width="282" height="158"/></g>
+                <use class="hud" href="#hud" x="9" y="9" width="282" height="158"/>
+                <rect x="9" y="9" width="282" height="158" fill="url(#glare)"/>
               </g>
             </svg>
             <figcaption class="mac-name">Studio</figcaption>
@@ -160,18 +203,29 @@
 
           <figure class="mac mac-laptop" id="deskB">
             <div class="mac-glow" aria-hidden="true"></div>
-            <svg viewBox="0 0 260 166" role="img" aria-label="A MacBook Pro">
-              <rect x="22" width="216" height="146" rx="9" fill="url(#alu)"/>
-              <rect x="25" y="3" width="210" height="140" rx="7" fill="#06080C"/>
+            <svg viewBox="0 0 330 212" role="img" aria-label="A 14-inch MacBook Pro">
+              <ellipse cx="165" cy="205" rx="158" ry="4" fill="#000" opacity=".55" filter="url(#contact)"/>
+              <!-- Lid: rounded at the top, square where it meets the hinge. -->
+              <path d="M30 176V11Q30 1 40 1h250q10 0 10 10v165z" fill="url(#rim)"/>
+              <path d="M31.8 176V12q0-9 9-9h248.4q9 0 9 9v164z" fill="#08090C"/>
               <g class="scr">
-                <rect class="scr-back" x="30" y="8" width="200" height="126" fill="#18213A"/>
-                <g class="scr-on"><use href="#wall" x="30" y="8" width="200" height="126"/></g>
-                <use class="hud" href="#hud" x="30" y="8" width="200" height="126"/>
-                <rect x="30" y="8" width="200" height="126" fill="url(#glare)"/>
+                <rect x="37" y="8" width="256" height="164" rx="5" fill="#0C0E13"/>
+                <rect class="scr-back" x="37" y="8" width="256" height="164" rx="5" fill="#18213A"/>
+                <g class="scr-on"><use href="#wall" x="37" y="8" width="256" height="164"/></g>
+                <use class="hud" href="#hud" x="37" y="8" width="256" height="164"/>
+                <rect x="37" y="8" width="256" height="164" rx="5" fill="url(#glare)"/>
               </g>
-              <rect x="24" y="145" width="212" height="5" fill="#3A3F49"/>
-              <path d="M0 150h260l-6 10q-2 3-7 3H13q-5 0-7-3z" fill="url(#aluBase)"/>
-              <rect x="110" y="150" width="40" height="3" rx="1.5" fill="#8C93A1"/>
+              <!-- The camera housing cut into the top of the screen. -->
+              <path d="M154 8h22v4.2q0 2.8-2.8 2.8h-16.4q-2.8 0-2.8-2.8z" fill="#08090C"/>
+              <circle cx="165" cy="11" r="1.1" fill="#1E2533"/><circle cx="164.75" cy="10.75" r=".35" fill="#5C6B8A"/>
+              <rect x="31" y="176" width="268" height="3.5" fill="url(#hinge)"/>
+              <!-- Base, seen from a little above: keyboard deck, trackpad, front edge. -->
+              <path d="M30 179.5h270l30 18H0z" fill="url(#deck)"/>
+              <path d="M64 181h202l7 7.5H57z" fill="#1C1F25"/>
+              <path d="M64 181h202l7 7.5H57z" fill="none" stroke="#000" stroke-opacity=".25" stroke-width=".5"/>
+              <path d="M126 190h78l3 6.4h-84z" fill="#CDD2DA" stroke="#9FA6B2" stroke-width=".5"/>
+              <path d="M0 197.5h330v2.5q0 5-6 5H6q-6 0-6-5z" fill="url(#edge)"/>
+              <path d="M150 197.5h30q-1 3.2-5 3.2h-20q-4 0-5-3.2z" fill="#6F7684"/>
             </svg>
             <figcaption class="mac-name">MacBook Pro</figcaption>
           </figure>
@@ -179,9 +233,12 @@
 
         <div class="kbd-shadow" id="kbdShadow" aria-hidden="true"></div>
         <div class="kbd" id="kbd">
-          <svg viewBox="0 0 220 74" role="img" aria-label="Magic Keyboard">
-            <rect width="220" height="74" rx="7" fill="url(#alu)"/>
-            <g fill="#F8F9FB"><rect x="6.0" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="21.0" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="35.9" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="50.9" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="65.9" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="80.8" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="95.8" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="110.7" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="125.7" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="140.7" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="155.6" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="170.6" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="185.6" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="200.5" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="6.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="20.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="35.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="49.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="64.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="78.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="93.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="107.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="122.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="136.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="151.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="165.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="180.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="194.5" y="10.7" width="19.5" height="10.4" rx="1.6"/><rect x="6.0" y="22.6" width="19.5" height="10.4" rx="1.6"/><rect x="27.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="41.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="56.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="70.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="85.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="99.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="114.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="128.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="143.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="157.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="172.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="186.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="201.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="6.0" y="34.5" width="23.6" height="10.4" rx="1.6"/><rect x="31.1" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="45.7" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="60.3" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="74.9" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="89.5" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="104.1" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="118.7" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="133.3" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="147.9" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="162.5" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="177.1" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="191.7" y="34.5" width="22.3" height="10.4" rx="1.6"/><rect x="6.0" y="46.4" width="30.4" height="10.4" rx="1.6"/><rect x="37.9" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="52.6" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="67.3" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="82.0" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="96.7" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="111.4" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="126.1" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="140.8" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="155.5" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="170.2" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="184.9" y="46.4" width="29.1" height="10.4" rx="1.6"/><rect x="6.0" y="58.3" width="13.4" height="10.4" rx="1.6"/><rect x="20.9" y="58.3" width="13.4" height="10.4" rx="1.6"/><rect x="35.8" y="58.3" width="13.4" height="10.4" rx="1.6"/><rect x="50.7" y="58.3" width="16.8" height="10.4" rx="1.6"/><rect x="69.0" y="58.3" width="67.1" height="10.4" rx="1.6"/><rect x="137.6" y="58.3" width="16.8" height="10.4" rx="1.6"/><rect x="155.8" y="58.3" width="13.4" height="10.4" rx="1.6"/><rect x="170.8" y="63.5" width="13.4" height="5.2" rx="1.2"/><rect x="185.7" y="58.3" width="13.4" height="4.7" rx="1.2"/><rect x="185.7" y="64.0" width="13.4" height="4.7" rx="1.2"/><rect x="200.6" y="63.5" width="13.4" height="5.2" rx="1.2"/></g>
+          <svg viewBox="0 0 220 79" role="img" aria-label="Magic Keyboard">
+            <path d="M0 70h220v2.5q0 6-6 6H6q-6 0-6-6z" fill="url(#edge)"/>
+            <rect width="220" height="73" rx="6" fill="url(#kbTop)"/>
+            <rect x=".5" y=".5" width="219" height="72" rx="5.5" fill="none" stroke="#fff" stroke-opacity=".6"/>
+            <g fill="#AEB4BF" transform="translate(0 .9)"><rect x="6.0" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="21.0" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="35.9" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="50.9" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="65.9" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="80.8" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="95.8" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="110.7" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="125.7" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="140.7" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="155.6" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="170.6" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="185.6" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="200.5" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="6.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="20.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="35.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="49.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="64.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="78.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="93.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="107.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="122.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="136.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="151.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="165.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="180.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="194.5" y="10.7" width="19.5" height="10.4" rx="1.6"/><rect x="6.0" y="22.6" width="19.5" height="10.4" rx="1.6"/><rect x="27.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="41.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="56.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="70.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="85.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="99.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="114.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="128.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="143.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="157.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="172.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="186.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="201.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="6.0" y="34.5" width="23.6" height="10.4" rx="1.6"/><rect x="31.1" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="45.7" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="60.3" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="74.9" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="89.5" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="104.1" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="118.7" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="133.3" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="147.9" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="162.5" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="177.1" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="191.7" y="34.5" width="22.3" height="10.4" rx="1.6"/><rect x="6.0" y="46.4" width="30.4" height="10.4" rx="1.6"/><rect x="37.9" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="52.6" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="67.3" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="82.0" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="96.7" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="111.4" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="126.1" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="140.8" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="155.5" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="170.2" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="184.9" y="46.4" width="29.1" height="10.4" rx="1.6"/><rect x="6.0" y="58.3" width="13.4" height="10.4" rx="1.6"/><rect x="20.9" y="58.3" width="13.4" height="10.4" rx="1.6"/><rect x="35.8" y="58.3" width="13.4" height="10.4" rx="1.6"/><rect x="50.7" y="58.3" width="16.8" height="10.4" rx="1.6"/><rect x="69.0" y="58.3" width="67.1" height="10.4" rx="1.6"/><rect x="137.6" y="58.3" width="16.8" height="10.4" rx="1.6"/><rect x="155.8" y="58.3" width="13.4" height="10.4" rx="1.6"/><rect x="170.8" y="63.5" width="13.4" height="5.2" rx="1.2"/><rect x="185.7" y="58.3" width="13.4" height="4.7" rx="1.2"/><rect x="185.7" y="64.0" width="13.4" height="4.7" rx="1.2"/><rect x="200.6" y="63.5" width="13.4" height="5.2" rx="1.2"/></g>
+            <g fill="url(#key)"><rect x="6.0" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="21.0" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="35.9" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="50.9" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="65.9" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="80.8" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="95.8" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="110.7" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="125.7" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="140.7" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="155.6" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="170.6" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="185.6" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="200.5" y="4.0" width="13.5" height="5.2" rx="1.6"/><rect x="6.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="20.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="35.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="49.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="64.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="78.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="93.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="107.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="122.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="136.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="151.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="165.5" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="180.0" y="10.7" width="13.0" height="10.4" rx="1.6"/><rect x="194.5" y="10.7" width="19.5" height="10.4" rx="1.6"/><rect x="6.0" y="22.6" width="19.5" height="10.4" rx="1.6"/><rect x="27.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="41.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="56.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="70.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="85.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="99.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="114.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="128.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="143.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="157.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="172.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="186.5" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="201.0" y="22.6" width="13.0" height="10.4" rx="1.6"/><rect x="6.0" y="34.5" width="23.6" height="10.4" rx="1.6"/><rect x="31.1" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="45.7" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="60.3" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="74.9" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="89.5" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="104.1" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="118.7" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="133.3" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="147.9" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="162.5" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="177.1" y="34.5" width="13.1" height="10.4" rx="1.6"/><rect x="191.7" y="34.5" width="22.3" height="10.4" rx="1.6"/><rect x="6.0" y="46.4" width="30.4" height="10.4" rx="1.6"/><rect x="37.9" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="52.6" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="67.3" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="82.0" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="96.7" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="111.4" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="126.1" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="140.8" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="155.5" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="170.2" y="46.4" width="13.2" height="10.4" rx="1.6"/><rect x="184.9" y="46.4" width="29.1" height="10.4" rx="1.6"/><rect x="6.0" y="58.3" width="13.4" height="10.4" rx="1.6"/><rect x="20.9" y="58.3" width="13.4" height="10.4" rx="1.6"/><rect x="35.8" y="58.3" width="13.4" height="10.4" rx="1.6"/><rect x="50.7" y="58.3" width="16.8" height="10.4" rx="1.6"/><rect x="69.0" y="58.3" width="67.1" height="10.4" rx="1.6"/><rect x="137.6" y="58.3" width="16.8" height="10.4" rx="1.6"/><rect x="155.8" y="58.3" width="13.4" height="10.4" rx="1.6"/><rect x="170.8" y="63.5" width="13.4" height="5.2" rx="1.2"/><rect x="185.7" y="58.3" width="13.4" height="4.7" rx="1.2"/><rect x="185.7" y="64.0" width="13.4" height="4.7" rx="1.2"/><rect x="200.6" y="63.5" width="13.4" height="5.2" rx="1.2"/></g>
           </svg>
         </div>
       </div>
