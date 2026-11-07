@@ -7,7 +7,8 @@
 <meta name="description" content="Move your Magic Keyboard, Mouse and Trackpad between Macs from the menu bar. No cable, no re-pairing. One payment, yours forever.">
 <link rel="icon" href="assets/icon-256.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/icon-256.png">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="preload" href="assets/fonts/big-shoulders-display.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css?v=3">
 <meta property="og:title" content="Baton — move your Magic Keyboard between Macs in one click">
 <meta property="og:description" content="Hand your Magic Keyboard, Mouse and Trackpad between Macs from the menu bar. No cable, no re-pairing.">
 <meta property="og:type" content="website">
@@ -15,7 +16,7 @@
 <meta property="og:image:alt" content="The Baton app icon">
 <meta property="og:url" content="https://batonapp.uk/">
 <meta property="og:site_name" content="Baton">
-<meta name="theme-color" content="#0C0C11">
+<meta name="theme-color" content="#11275A">
 <link rel="canonical" href="https://batonapp.uk/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Baton — move your Magic Keyboard between Macs in one click">
@@ -28,7 +29,7 @@
   "name": "Baton",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "macOS 14.0 or later",
-  "softwareVersion": "1.3.0",
+  "softwareVersion": "1.4.0",
   "url": "https://batonapp.uk/",
   "downloadUrl": "https://github.com/enalmar/baton-site/releases/latest/download/Baton.dmg",
   "description": "Move your Magic Keyboard, Mouse and Trackpad between Macs from the menu bar. No cable, no re-pairing, no account.",
@@ -51,7 +52,9 @@
       Baton
     </a>
     <nav class="nav">
-      <a class="btn btn-ghost btn-sm" href="https://github.com/enalmar/baton-site/releases/latest/download/Baton.dmg">Download — try free</a>
+      <a class="hide-sm" href="#setup">Setting up</a>
+      <a class="hide-sm" href="#pricing">Pricing</a>
+      <a class="btn btn-ghost btn-sm" href="https://github.com/enalmar/baton-site/releases/latest/download/Baton.dmg">Download</a>
       <a class="btn btn-primary btn-sm" href="#pricing">Buy</a>
     </nav>
   </div>
@@ -59,32 +62,56 @@
 
 <main>
 
-<section class="hero hero-centered">
+<section class="hero on-track" id="how">
+  <svg class="lanes" viewBox="0 0 1000 1000" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+    <circle cx="1000" cy="1000" r="340"/><circle cx="1000" cy="1000" r="440"/><circle cx="1000" cy="1000" r="540"/>
+    <circle cx="1000" cy="1000" r="640"/><circle cx="1000" cy="1000" r="740"/><circle cx="1000" cy="1000" r="840"/>
+  </svg>
   <div class="wrap">
-    <h1>One keyboard.<br><span class="accent">Every Mac.</span></h1>
-    <p class="lede">
-      Baton moves your Magic Keyboard, Mouse and Trackpad from one Mac to
-      another. Two buttons. No cable, no re-pairing.
-    </p>
-    <div class="cta-row">
-      <!-- PRICE appears here and in the pricing card. Change both. -->
-      <a class="btn btn-primary" href="#pricing">Buy Baton — $9 once</a>
-      <a class="btn btn-ghost" href="https://github.com/enalmar/baton-site/releases/latest/download/Baton.dmg">Try it free for 14 days</a>
+    <div class="hero-top">
+      <h1>One keyboard. Every Mac.</h1>
+      <div>
+        <p class="lede">
+          Baton hands your Magic Keyboard, Mouse and Trackpad from one Mac to
+          the next. Press a button and the other Mac picks it up. No cable, no
+          re-pairing.
+        </p>
+        <div class="cta-row">
+          <!-- PRICE appears here, in the pricing card and in the closer. Change all three. -->
+          <a class="btn btn-primary" href="#pricing">Buy Baton — $9 once</a>
+          <a class="btn btn-ghost" href="https://github.com/enalmar/baton-site/releases/latest/download/Baton.dmg">Try it free for 14 days</a>
+        </div>
+        <p class="small hero-note">For macOS 14 or later. Notarised by Apple.</p>
+      </div>
     </div>
-  </div>
-</section>
 
-<hr class="rule">
+    <div class="stage" id="demo">
+      <!-- The desk: two Macs and the keyboard that moves between them. -->
+      <div class="desk" id="desk" aria-live="polite">
+        <p class="desk-hint" id="deskHint">Press <strong>Send away</strong> in Baton's menu to try it.</p>
+        <div class="mac2" id="deskA">
+          <svg viewBox="0 0 120 84" width="120" height="84" fill="none" stroke="currentColor" stroke-width="2.2">
+            <rect x="8" y="6" width="104" height="60" rx="6"/><path d="M40 78h40"/><path d="M60 66v12"/>
+          </svg>
+          <div class="mac2-name">Studio</div>
+        </div>
+        <div class="lane">
+          <div class="lane-line"></div>
+          <div class="kbd" id="kbd">
+            <svg viewBox="0 0 96 40" width="96" height="40" fill="none" stroke="currentColor" stroke-width="2.2">
+              <rect x="2" y="2" width="92" height="36" rx="6"/>
+              <path d="M12 12h6M24 12h6M36 12h6M48 12h6M60 12h6M72 12h6M12 21h6M24 21h6M36 21h6M48 21h6M60 21h6M72 21h6M22 30h52"/>
+            </svg>
+          </div>
+        </div>
+        <div class="mac2" id="deskB">
+          <svg viewBox="0 0 120 84" width="120" height="84" fill="none" stroke="currentColor" stroke-width="2.2">
+            <rect x="16" y="10" width="88" height="54" rx="5"/><path d="M6 72h108"/>
+          </svg>
+          <div class="mac2-name">MacBook Pro</div>
+        </div>
+      </div>
 
-<section id="how">
-  <div class="wrap">
-    <p class="eyebrow">Try it</p>
-    <h2>How does it work?</h2>
-    <p class="body" style="margin-top:var(--s4)">
-      This is Baton's menu, as it appears in your menu bar. Press a button.
-    </p>
-
-    <div class="demo2" id="demo">
       <!-- The panel, matching the real one control for control. -->
       <div class="panel" role="group" aria-label="Baton menu bar panel">
         <div class="p-head">
@@ -122,47 +149,23 @@
         <div class="p-sep"></div>
         <div class="p-foot"><span>Settings…</span><span>Quit</span></div>
       </div>
-
-      <!-- The desk: two Macs and the keyboard that moves between them. -->
-      <div class="desk" id="desk" aria-live="polite">
-        <div class="mac2" id="deskA">
-          <svg viewBox="0 0 120 84" width="120" height="84" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="8" y="6" width="104" height="60" rx="6"/><path d="M40 78h40"/><path d="M60 66v12"/>
-          </svg>
-          <div class="mac2-name">Studio</div>
-        </div>
-        <div class="lane">
-          <div class="lane-line"></div>
-          <div class="kbd" id="kbd">
-            <svg viewBox="0 0 96 40" width="96" height="40" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="2" width="92" height="36" rx="6"/>
-              <path d="M12 12h6M24 12h6M36 12h6M48 12h6M60 12h6M72 12h6M12 21h6M24 21h6M36 21h6M48 21h6M60 21h6M72 21h6M22 30h52"/>
-            </svg>
-          </div>
-        </div>
-        <div class="mac2" id="deskB">
-          <svg viewBox="0 0 120 84" width="120" height="84" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="16" y="10" width="88" height="54" rx="5"/><path d="M6 72h108"/>
-          </svg>
-          <div class="mac2-name">MacBook Pro</div>
-        </div>
-      </div>
     </div>
 
-    <p class="small" style="margin-top:var(--s5); max-width:var(--measure)">
-      The Mac you're leaving lets go, the other one connects. If anything goes wrong, the keyboard comes back to where it was. Each device also has its own menu, for moving just the trackpad.
+    <p class="small stage-caption">
+      The Mac you're leaving lets go, the other one connects. If anything goes
+      wrong, the keyboard comes back to where it was. Each device also has its
+      own menu, for moving just the trackpad.
     </p>
   </div>
 </section>
 
-<hr class="rule">
-
 <section id="setup">
   <div class="wrap">
-    <h2>Setting up</h2>
-    <p class="body" style="margin-top:var(--s4)">Two minutes, once.</p>
+    <div class="section-head">
+      <h2>Two minutes to set up, once.</h2>
+    </div>
 
-    <div class="steps" style="margin-top:var(--s7)">
+    <div class="steps">
       <div class="step">
         <h3>Pair the normal way</h3>
         <p>Pair each device with each Mac in Bluetooth settings, like you would anyway.</p>
@@ -190,80 +193,73 @@
   </div>
 </section>
 
-<hr class="rule">
-
-<section id="features">
+<section id="features" style="padding-top:0">
   <div class="wrap">
-    <h2>Good to know</h2>
-    <ul class="plain-list">
-      <li><strong>Works with any number of Macs.</strong> Two, three, the one in the office. They all show up in the menu.</li>
-      <li><strong>Buy once, set up once.</strong> Pair a new Mac with your code and it picks up your licence from the others. No hunting for the receipt.</li>
-      <li><strong>Move one thing or everything.</strong> Send the trackpad to the laptop and keep the keyboard where it is.</li>
-      <li><strong>Handles sleep.</strong> A sleeping Mac lets go of its devices and takes them back when it wakes.</li>
-      <li><strong>Nothing leaves your network.</strong> Your Macs talk to each other directly. There's no account and no server in the middle.</li>
-      <li><strong>Notarised by Apple.</strong> Sandboxed, and asks only for what's below.</li>
-    </ul>
+    <div class="section-head">
+      <h2>Good to know</h2>
+    </div>
+    <div class="facts">
+      <div class="fact"><div><h3>Works with any number of Macs</h3><p>Two, three, the one in the office. They all show up in the menu.</p></div></div>
+      <div class="fact"><div><h3>Buy once, set up once</h3><p>Pair a new Mac with your code and it picks up your licence from the others. No hunting for the receipt.</p></div></div>
+      <div class="fact"><div><h3>Move one thing or everything</h3><p>Send the trackpad to the laptop and keep the keyboard where it is.</p></div></div>
+      <div class="fact"><div><h3>Handles sleep</h3><p>A sleeping Mac lets go of its devices and takes them back when you wake it.</p></div></div>
+      <div class="fact"><div><h3>Nothing leaves your network</h3><p>Your Macs talk to each other directly. There's no account and no server in the middle.</p></div></div>
+      <div class="fact"><div><h3>Notarised by Apple</h3><p>Sandboxed, and asks only for the three things below.</p></div></div>
+    </div>
 
-    <h3 style="margin-top:var(--s7)">What it asks for, and why</h3>
-    <ul class="plain-list" style="margin-top:var(--s4)">
-      <li><strong>Bluetooth.</strong> To connect and disconnect your keyboard, mouse and trackpad. That's the whole job.</li>
-      <li><strong>Local network.</strong> To find your other Macs and tell them when a device is on its way.</li>
-      <li><strong>Notifications.</strong> Only to tell you if a handover failed. Say no and it just stays quiet.</li>
-    </ul>
+    <div class="asks">
+      <h3>What it asks for, and why</h3>
+      <dl>
+        <div><dt>Bluetooth</dt><dd>To connect and disconnect your keyboard, mouse and trackpad. That's the whole job.</dd></div>
+        <div><dt>Local network</dt><dd>To find your other Macs and tell them when a device is on its way.</dd></div>
+        <div><dt>Notifications</dt><dd>Only to tell you if a handover failed. Say no and it just stays quiet.</dd></div>
+      </dl>
+    </div>
   </div>
 </section>
 
-<hr class="rule">
-
-<section id="pricing">
+<section id="pricing" style="padding-top:0">
   <div class="wrap">
-    <p class="eyebrow">Pricing</p>
-    <h2 style="margin-top:var(--s3)">Pay once. Use it on all your Macs.</h2>
-
-    <div class="grid grid-2" style="margin-top:var(--s7); align-items:start; gap:var(--s8)">
-    <div class="price-card">
-      <p class="eyebrow">Baton</p>
+    <div class="price">
       <div class="price-tag">
-        <!-- PRICE also appears in the hero button. Change both. -->
+        <svg class="lanes" viewBox="0 0 1000 1000" fill="none" stroke="currentColor" stroke-width="4" aria-hidden="true">
+          <circle cx="1000" cy="1000" r="340"/><circle cx="1000" cy="1000" r="440"/><circle cx="1000" cy="1000" r="540"/><circle cx="1000" cy="1000" r="640"/>
+        </svg>
+        <!-- PRICE also appears in the hero button and the closer. Change all three. -->
         <span class="amount">$9</span>
-        <span class="per">one payment</span>
+        <span class="per">One payment, tax included.<br>Every Mac you own.</span>
       </div>
-      <p class="small">Tax included.</p>
-      <ul class="ticks">
-        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m4 12 6 6L20 6"/></svg> All the Macs you own</li>
-        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m4 12 6 6L20 6"/></svg> Updates included</li>
-        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m4 12 6 6L20 6"/></svg> Key arrives by email, no account</li>
-        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m4 12 6 6L20 6"/></svg> 30-day refund, no questions</li>
-      </ul>
-      <a class="btn btn-primary" id="buyBtn" href="#" style="width:100%">Buy Baton</a>
-      <p class="small" id="buyNote" hidden style="margin-top:var(--s3); color:var(--coral-hi)"></p>
-      <p class="small" style="margin-top:var(--s4)">
-        Not sure yet? <a href="https://github.com/enalmar/baton-site/releases/latest/download/Baton.dmg" style="color:var(--soft)">Try it free for 14 days</a> first.
-      </p>
+      <div class="price-body">
+        <h2>Pay once. Use it on all your Macs.</h2>
+        <ul class="ticks">
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 6 6L20 6"/></svg> All the Macs you own</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 6 6L20 6"/></svg> Updates included</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 6 6L20 6"/></svg> Key arrives by email, no account</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12 6 6L20 6"/></svg> 30-day refund, no questions</li>
+        </ul>
+        <a class="btn btn-primary" id="buyBtn" href="#">Buy Baton</a>
+        <p class="small" id="buyNote" hidden></p>
+        <p class="small">Not sure yet? <a href="https://github.com/enalmar/baton-site/releases/latest/download/Baton.dmg">Try it free for 14 days</a> first.</p>
+      </div>
     </div>
 
-    <div>
-      <p class="body" style="font-size:.98rem">
-        The trial does everything the paid version does. When it ends, Baton
+    <div class="price-more">
+      <p>The trial does everything the paid version does. When it ends, Baton
         stops switching but leaves your devices exactly where they are. Enter
-        a key and it carries on.
-      </p>
-      <p class="body" style="margin-top:var(--s4); font-size:.98rem">
-        Payment goes through Polar, so your card details never touch this
+        a key and it carries on.</p>
+      <p>Payment goes through Polar, so your card details never touch this
         site. If you replace a Mac, free up its slot from your Polar
-        purchases page and activate the new one.
-      </p>
-    </div>
+        purchases page and activate the new one.</p>
     </div>
   </div>
 </section>
 
-<hr class="rule">
-
-<section>
+<section style="padding-top:0">
   <div class="wrap">
-    <h2>Questions</h2>
-    <div class="faq" style="margin-top:var(--s6)">
+    <div class="section-head">
+      <h2>Questions</h2>
+    </div>
+    <div class="faq">
       <details>
         <summary>Why does my keyboard only work on one Mac at a time?
           <svg class="plus" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></summary>
@@ -303,17 +299,17 @@
   </div>
 </section>
 
-<section style="padding-top:0">
+<section class="closer on-track">
+  <svg class="lanes" viewBox="0 0 1000 1000" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+    <circle cx="1000" cy="1000" r="340"/><circle cx="1000" cy="1000" r="440"/><circle cx="1000" cy="1000" r="540"/>
+    <circle cx="1000" cy="1000" r="640"/><circle cx="1000" cy="1000" r="740"/>
+  </svg>
   <div class="wrap">
-    <div class="closer">
-      <div>
-        <h2>Put it on both Macs tonight.</h2>
-        <p class="small" style="margin-top:var(--s2)">Free for 14 days. No card.</p>
-      </div>
-      <div class="closer-cta">
-        <a class="btn btn-ghost" href="https://github.com/enalmar/baton-site/releases/latest/download/Baton.dmg">Download</a>
-        <a class="btn btn-primary" href="#pricing">Buy — $9 once</a>
-      </div>
+    <h2>Put it on both Macs tonight.</h2>
+    <p class="lede">Free for 14 days. No card.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://github.com/enalmar/baton-site/releases/latest/download/Baton.dmg">Download Baton</a>
+      <a class="btn btn-ghost" href="#pricing">Buy — $9 once</a>
     </div>
   </div>
 </section>
@@ -374,7 +370,7 @@ var CHECKOUT_URL = "https://buy.polar.sh/polar_cl_WAfmErQFpUTaN92ozeJsTxJIsAhnrU
   var btnBring = document.getElementById('btnBring'), btnSend = document.getElementById('btnSend');
   if (!kbd || !btnBring) return;
   var lane = desk.querySelector('.lane');
-  function measure() { lane.style.setProperty('--lane', Math.max(0, lane.clientWidth - 96) + 'px'); }
+  function measure() { lane.style.setProperty('--lane', Math.max(0, lane.clientWidth - kbd.offsetWidth) + 'px'); }
   measure();
   window.addEventListener('resize', measure);
   if (window.ResizeObserver) { new ResizeObserver(measure).observe(lane); }
@@ -386,6 +382,9 @@ var CHECKOUT_URL = "https://buy.polar.sh/polar_cl_WAfmErQFpUTaN92ozeJsTxJIsAhnrU
     document.getElementById('pState').textContent = here ? 'here' : 'away';
     document.getElementById('macA').textContent = here ? 'all here' : '';
     document.getElementById('macB').textContent = here ? '' : 'has the keyboard';
+    document.getElementById('deskHint').innerHTML = here
+      ? 'Press <strong>Send away</strong> in Baton\u2019s menu to try it.'
+      : 'Now press <strong>Bring here</strong> to take it back.';
     btnBring.disabled = here || busy;
     btnSend.disabled = !here || busy;
     kbd.classList.toggle('at-b', !here);
